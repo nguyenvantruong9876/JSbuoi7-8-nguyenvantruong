@@ -8,7 +8,7 @@ function themSo() {
     // push : lưu giá trị mới vào mảng
 
     nums.push(num);
-    console.log(nums);
+    
     document.getElementById("txtResult1").innerHTML = "Mảng: " + nums;
 }
 document.querySelector("#formNumber button").onclick = themSo;
@@ -20,7 +20,7 @@ function tongChan() {
             sum += nums[i]
         }
     }
-    console.log(sum)
+  
     document.getElementById("txtResulttong").innerHTML = "Tổng số dương: " + sum;
 }
 document.getElementById("btnTinh").onclick = tongChan;
@@ -32,7 +32,7 @@ function demSoDuong() {
             count++
         }
     }
-    console.log(count);
+    
     document.getElementById("txtResultduong").innerHTML = "số Dương: " + count;
 }
 document.getElementById("btndem").onclick = demSoDuong;
@@ -110,7 +110,7 @@ function sapxep() {
         }
 
     }
-    console.log(nums)
+   
     document.querySelector('#txtResultsapxep').innerHTML = "Mảng sau khi sắp xếp: " + nums;
 }
 document.querySelector("#btnsapxep").onclick = sapxep;
