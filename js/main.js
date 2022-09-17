@@ -37,15 +37,11 @@ function demSoDuong() {
 }
 document.getElementById("btndem").onclick = demSoDuong;
 //bài 3
-function timmin() {
-    var vitri = 0;
+function timmin() { 
     var min = nums[0];
     for (var i = 0; i < nums.length; i++) {
         if (min > nums[i]) {
-
             min = nums[i];
-            vitri = i;
-
         }
     }
     document.querySelector("#txtResultnhonhat").innerHTML = "Số nhỏ nhất: " + min;
@@ -54,14 +50,11 @@ document.getElementById("btnnhonhat").onclick = timmin;
 
 //bài 4
 function timsoduongnhonhat() {
-    var vitri = 0;
+
     var min = nums[0];
     for (var i = 0; i < nums.length; i++) {
-        if (min > nums[i]) {
-
+        if(nums[i] > 0 && min > nums[i]) {
             min = nums[i];
-            vitri = i;
-
         }
     }
     document.querySelector("#txtResultduongnhonhat").innerHTML = "Số dương nhỏ nhất: " + min;
@@ -156,17 +149,19 @@ document.querySelector("#btdemso").onclick = demsonguyen;
 function sosanh() {
     var countduong = 0;
     var countam = 0;
-    kq = '';
-  for (var i = 0; i < nums.length; i++)
-  nums[i] > 0 ? countduong++ : nums[i] < 0 && countam++;
-  if (countduong > countam) {
-    kq ='Số dương > Số âm';
-  } else if (countduong < countam) {
-    kq ='Số âm > Số dương';
-  }else{
-    kq ='Số âm = Số dương';
-  }
-  document.getElementById('txtResultsosanh').innerHTML = kq
+    var result;
+    if (countam === 0) {
+        result = "không có số âm";
+      } else if (countduong === 0) {
+        result = "không có số dương";
+      } else if (countduong > countam) {
+        result = "Lượng số dương nhiều hơn lượng số âm";
+      } else if (countduong < countam) {
+        result = "Lượng số âm nhiều hơn lượng số dương";
+      } else if ((countduong = countam)) {
+        result = "Lượng số dương bằng lượng số âm";
+      }
+  document.getElementById('txtResultsosanh').innerHTML = result
 
 }
 document.querySelector("#btsosanh").onclick = sosanh;
